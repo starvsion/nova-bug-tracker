@@ -1,8 +1,8 @@
 <?php
 
-    namespace Starvsion\NovaBugTracker\Models;
+namespace Starvsion\NovaBugTracker\Models;
 
-    use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
     class BugTrackerTag extends Model
     {
@@ -11,5 +11,4 @@
             parent::__construct($attributes);
             $this->table = config('bug_tracker.table_prefix', 'bug_tracker').'_tags';
         }
-
     }

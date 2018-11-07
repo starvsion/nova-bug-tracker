@@ -1,11 +1,11 @@
 <?php
 
-    namespace Starvsion\NovaBugTracker\Migration;
+namespace Starvsion\NovaBugTracker\Migration;
 
+use Illuminate\Database\Schema\Blueprint;
     use Illuminate\Support\Facades\Schema;
-    use Illuminate\Database\Schema\Blueprint;
 
-    class AddBugTrackerMigration
+    class AddBugTrackerAdditionalMigration
     {
         private $prefix;
 
@@ -16,8 +16,7 @@
 
         public function up()
         {
-            Schema::create($this->prefix . '_bug_tags', function (Blueprint $table) {
-
+            Schema::create($this->prefix.'_bug_tags', function (Blueprint $table) {
                 $table->unsignedBigInteger('bug_tracker_id');
                 $table->unsignedBigInteger('tag_id');
 
@@ -27,6 +26,6 @@
 
         public function down()
         {
-            Schema::dropIfExists($this->prefix . '_bug_tags');
+            Schema::dropIfExists($this->prefix.'_bug_tags');
         }
     }

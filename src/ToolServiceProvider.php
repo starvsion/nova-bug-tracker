@@ -2,10 +2,9 @@
 
 namespace Starvsion\NovaBugTracker;
 
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Nova;
 use Starvsion\NovaBugTracker\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
@@ -23,11 +22,9 @@ class ToolServiceProvider extends ServiceProvider
             $this->routes();
         });
 
-        $this->mergeConfigFrom(__DIR__.'/../config/bug_tracker.php' , 'config');
+        $this->mergeConfigFrom(__DIR__.'/../config/bug_tracker.php', 'config');
 
         $this->loadMigrationsFrom(__DIR__.'/Migrations/');
-
-
     }
 
     /**

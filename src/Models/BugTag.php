@@ -1,12 +1,11 @@
 <?php
 
-    namespace Starvsion\NovaBugTracker\Models;
+namespace Starvsion\NovaBugTracker\Models;
 
-    use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
     class BugTag extends Pivot
     {
-
         public function __construct(array $attributes = [])
         {
             parent::__construct($attributes);
@@ -15,11 +14,11 @@
 
         public function bug()
         {
-            return $this->belongsTo(BugTag::class);
+            return $this->belongsTo(self::class);
         }
 
         public function tag()
         {
-            return $this->belongsTo(BugTag::class);
+            return $this->belongsTo(self::class);
         }
     }

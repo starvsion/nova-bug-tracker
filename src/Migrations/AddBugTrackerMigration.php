@@ -1,9 +1,9 @@
 <?php
 
-    namespace Starvsion\NovaBugTracker\Migration;
+namespace Starvsion\NovaBugTracker\Migration;
 
+use Illuminate\Database\Schema\Blueprint;
     use Illuminate\Support\Facades\Schema;
-    use Illuminate\Database\Schema\Blueprint;
 
     class AddBugTrackerMigration
     {
@@ -16,7 +16,7 @@
 
         public function up()
         {
-            Schema::create($this->prefix . 's', function (Blueprint $table) {
+            Schema::create($this->prefix.'s', function (Blueprint $table) {
                 $table->increments('id');
                 $table->integer('user_id');
                 $table->string('title');
@@ -44,7 +44,7 @@
                 $table->string('version')->nullable();
             });
 
-            Schema::create($this->prefix . '_tags', function (Blueprint $table) {
+            Schema::create($this->prefix.'_tags', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('name');
             });
@@ -54,6 +54,5 @@
         {
             Schema::dropIfExists($this->prefix.'s');
             Schema::dropIfExists($this->prefix.'_tags');
-
         }
     }
